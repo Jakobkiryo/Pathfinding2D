@@ -12,7 +12,12 @@ namespace Grids
         {
             OnValidate();
         }
-    
+
+        public override string ToString()
+        {
+            return $"{nameof(GridCell)} ({Mathf.FloorToInt(transform.position.x)}|{Mathf.FloorToInt(transform.position.y)})";
+        }
+
         private void OnValidate()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
