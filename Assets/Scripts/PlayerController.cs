@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
             Grid grid = FindObjectOfType<Grid>();
             GridCell start = grid.GetCellForPosition(transform.position);
             GridCell end = grid.GetCellForPosition(gold.transform.position);
-            var path = FindPath_Dijkstra(grid, start, end);
+            var path = FindPath_BestFirst(grid, start, end);
             foreach (var node in path)
             {
                 node.spriteRenderer.color = Color.green;
@@ -137,6 +137,42 @@ public class PlayerController : MonoBehaviour
                 
                 //if (neighbor == end)  moved to start
                 //    return TracePath(neighbor, previous).Reverse();
+            }
+        }
+
+        return null;
+    }
+
+    static int GetEstimatedCosts(GridCell from, GridCell to)
+    {
+        return Mathf.RoundToInt(Vector3.Distance(from.transform.position, to.transform.position));
+    }
+    
+    static IEnumerable<GridCell> FindPath_BestFirst(Grid grid, GridCell start, GridCell end)
+    {
+        PriorityQueue<GridCell> todo = new();
+        todo.Enqueue(start, 0);
+        Dictionary<GridCell, int> costs = new();
+        costs[start] = GetEstimatedCosts(start, end); // START = Estimated Distance Costs
+        Dictionary<GridCell, GridCell> previous = new();
+
+        while (todo.Count > 0)
+        {
+            var current = todo.Dequeue();
+            if (current == end)
+                return TracePath(current, previous).Reverse();
+            
+            foreach (var neighbor in grid.GetWalkableNeighborsForCell(current))
+            {
+                int newNeighborCosts = costs[current] + neighbor.Costs;
+                if (costs.TryGetValue(neighbor, out int neighborCosts) &&
+                    neighborCosts <= newNeighborCosts) continue;
+                                                                 
+                todo.Enqueue(neighbor, GetEstimatedCosts(neighbor, end)); // Get Estimate
+                previous[neighbor] = current;
+                costs[neighbor] = newNeighborCosts;
+                
+                neighbor.spriteRenderer.ShiftBrightness(0.4f);
             }
         }
 
