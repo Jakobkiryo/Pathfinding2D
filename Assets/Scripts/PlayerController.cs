@@ -145,6 +145,8 @@ public class PlayerController : MonoBehaviour
 
     static int GetEstimatedCosts(GridCell from, GridCell to)
     {
+        // Pessimistic Heuristic: Vector3.SqrMagnitude(from.transform.position - to.transform.position);
+        // Optimistic  Heuristic: return 0;
         return Mathf.RoundToInt(Vector3.Distance(from.transform.position, to.transform.position));
     }
     
