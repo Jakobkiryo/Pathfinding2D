@@ -132,7 +132,9 @@ public class PlayerController : MonoBehaviour
                 todo.Enqueue(neighbor, newNeighborCosts);        // PROVIDE THE NEW PATH COSTS
                 previous[neighbor] = current;
                 costs[neighbor] = newNeighborCosts;
-                neighbor.spriteRenderer.color = Color.cyan;
+                
+                neighbor.spriteRenderer.ShiftBrightness(0.4f); // INSTEAD OF COLOR = CYAN
+                
                 //if (neighbor == end)  moved to start
                 //    return TracePath(neighbor, previous).Reverse();
             }
@@ -148,6 +150,28 @@ public class PlayerController : MonoBehaviour
             yield return neighbor;
             if (!previous.TryGetValue(neighbor, out neighbor))
                 yield break;
+        }
+    }
+}
+
+public static class SpriteRendererExtensions
+{
+    public static void ShiftHue(this SpriteRenderer spriteRenderer, float hue)
+    {
+        Color.RGBToHSV(spriteRenderer.color, out var h, out var s, out var v);
+        spriteRenderer.color = Color.HSVToRGB((h + hue)%1, s, v);
+    }
+    
+    public static void ShiftBrightness(this SpriteRenderer spriteRenderer, float brightness)
+    {
+        Color.RGBToHSV(spriteRenderer.color, out var h, out var s, out var v);
+        if (v > 0.5f)
+        {
+            spriteRenderer.color = Color.HSVToRGB(h, s, (v-brightness)%1f);
+        }
+        else
+        {
+            spriteRenderer.color = Color.HSVToRGB(h, s, (v+brightness)%1f);
         }
     }
 }
