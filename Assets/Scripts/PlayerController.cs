@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
             Grid grid = FindObjectOfType<Grid>();
             GridCell start = grid.GetCellForPosition(transform.position);
             GridCell end = grid.GetCellForPosition(gold.transform.position);
-            var path = FindPath_BestFirst(grid, start, end);
+            var path = FindPath_AStar(grid, start, end);
             foreach (var node in path)
             {
                 node.spriteRenderer.color = Color.green;
@@ -169,6 +169,37 @@ public class PlayerController : MonoBehaviour
                     neighborCosts <= newNeighborCosts) continue;
                                                                  
                 todo.Enqueue(neighbor, GetEstimatedCosts(neighbor, end)); // Get Estimate
+                previous[neighbor] = current;
+                costs[neighbor] = newNeighborCosts;
+                
+                neighbor.spriteRenderer.ShiftBrightness(0.4f);
+            }
+        }
+
+        return null;
+    }
+    
+    static IEnumerable<GridCell> FindPath_AStar(Grid grid, GridCell start, GridCell end)
+    {
+        PriorityQueue<GridCell> todo = new();
+        todo.Enqueue(start, 0);
+        Dictionary<GridCell, int> costs = new();
+        costs[start] = 0 + GetEstimatedCosts(start, end); // Costs To Here + Estimated Rem. Costs
+        Dictionary<GridCell, GridCell> previous = new();
+
+        while (todo.Count > 0)
+        {
+            var current = todo.Dequeue();
+            if (current == end)
+                return TracePath(current, previous).Reverse();
+            
+            foreach (var neighbor in grid.GetWalkableNeighborsForCell(current))
+            {
+                int newNeighborCosts = costs[current] + neighbor.Costs;
+                if (costs.TryGetValue(neighbor, out int neighborCosts) &&
+                    neighborCosts <= newNeighborCosts) continue;
+                                                                    
+                todo.Enqueue(neighbor, newNeighborCosts + GetEstimatedCosts(neighbor, end));  // Costs To Here + Estimated Rem. Costs
                 previous[neighbor] = current;
                 costs[neighbor] = newNeighborCosts;
                 
