@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Collections;
 using Grids;
 using UnityEngine;
 using Grid = Grids.Grid;
@@ -21,7 +22,7 @@ public class PlayerController : MonoBehaviour
             Grid grid = FindObjectOfType<Grid>();
             GridCell start = grid.GetCellForPosition(transform.position);
             GridCell end = grid.GetCellForPosition(gold.transform.position);
-            var path = FindPath_BreadthFirst(grid, start, end);
+            var path = FindPath_Dijkstra(grid, start, end);
             foreach (var node in path)
             {
                 node.spriteRenderer.color = Color.green;
@@ -101,6 +102,40 @@ public class PlayerController : MonoBehaviour
 
             //if (!foundNextNode)
             //    path.Pop();
+        }
+
+        return null;
+    }
+    
+    // CLONE OF BREADTH-FIRST-SEARCH
+    static IEnumerable<GridCell> FindPath_Dijkstra(Grid grid, GridCell start, GridCell end)
+    {
+        PriorityQueue<GridCell> todo = new(); // QUEUE -> PRIORITY_QUEUE
+        todo.Enqueue(start, 0); // START = 0 COSTS
+        Dictionary<GridCell, int> costs = new(); // HASHSET -> DICTIONARY
+        costs[start] = 0; // START = 0 COSTS
+        Dictionary<GridCell, GridCell> previous = new();
+
+        while (todo.Count > 0)
+        {
+            var current = todo.Dequeue();
+            if (current == end) // IF THE END NODE GOT OUT OF THE QUEUE WITH HIGHEST PRIORITY
+                return TracePath(current, previous).Reverse(); // IT MEANS WE FOUND THE FASTEST PATH
+            
+            foreach (var neighbor in grid.GetWalkableNeighborsForCell(current))
+            {
+                int newNeighborCosts = costs[current] + neighbor.Costs; // CALCULATE NEW PATH COSTS
+                if (costs.TryGetValue(neighbor, out int neighborCosts) && // CHECK IF THE NODE HAD COSTS
+                    neighborCosts <= newNeighborCosts) continue; // AND IF THE COSTS WERE MORE EFFICIENT
+                                                                 // THAN NEW COSTS THEN SKIP THIS NODE
+                                                                 
+                todo.Enqueue(neighbor, newNeighborCosts);        // PROVIDE THE NEW PATH COSTS
+                previous[neighbor] = current;
+                costs[neighbor] = newNeighborCosts;
+                neighbor.spriteRenderer.color = Color.cyan;
+                //if (neighbor == end)  moved to start
+                //    return TracePath(neighbor, previous).Reverse();
+            }
         }
 
         return null;

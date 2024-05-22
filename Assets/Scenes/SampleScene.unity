@@ -399,6 +399,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1304126032}
     m_Modifications:
     - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
+      propertyPath: cellType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: walkable
       value: 1
       objectReference: {fileID: 0}
@@ -755,6 +759,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1304126032}
     m_Modifications:
     - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
+      propertyPath: cellType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: walkable
       value: 1
       objectReference: {fileID: 0}
@@ -1110,6 +1118,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1304126032}
     m_Modifications:
+    - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
+      propertyPath: cellType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: walkable
       value: 1
@@ -1556,6 +1568,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1304126032}
     m_Modifications:
     - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
+      propertyPath: cellType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: walkable
       value: 1
       objectReference: {fileID: 0}
@@ -1569,11 +1585,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4142357951876588996, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4142357951876588996, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8577291709755580162, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1822,6 +1838,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1304126032}
     m_Modifications:
+    - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
+      propertyPath: cellType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: walkable
       value: 1
@@ -2538,6 +2558,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1304126032}
     m_Modifications:
     - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
+      propertyPath: cellType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: walkable
       value: 1
       objectReference: {fileID: 0}
@@ -2551,11 +2575,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4142357951876588996, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4142357951876588996, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8577291709755580162, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3690,6 +3714,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1304126032}
     m_Modifications:
     - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
+      propertyPath: cellType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: walkable
       value: 1
       objectReference: {fileID: 0}
@@ -3868,6 +3896,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1304126032}
     m_Modifications:
     - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
+      propertyPath: cellType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: walkable
       value: 1
       objectReference: {fileID: 0}
@@ -3881,11 +3913,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4142357951876588996, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4142357951876588996, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8577291709755580162, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3957,6 +3989,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1304126032}
     m_Modifications:
     - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
+      propertyPath: cellType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: walkable
       value: 1
       objectReference: {fileID: 0}
@@ -3970,11 +4006,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4142357951876588996, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4142357951876588996, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8577291709755580162, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5894,6 +5930,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1304126032}
     m_Modifications:
     - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
+      propertyPath: cellType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: walkable
       value: 1
       objectReference: {fileID: 0}
@@ -6695,6 +6735,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1304126032}
     m_Modifications:
     - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
+      propertyPath: cellType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: walkable
       value: 1
       objectReference: {fileID: 0}
@@ -6708,11 +6752,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4142357951876588996, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4142357951876588996, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8577291709755580162, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7051,6 +7095,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1304126032}
     m_Modifications:
     - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
+      propertyPath: cellType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: walkable
       value: 1
       objectReference: {fileID: 0}
@@ -7210,7 +7258,7 @@ Transform:
   m_GameObject: {fileID: 1641139944}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.98, y: 4.94, z: -1}
+  m_LocalPosition: {x: 4.05, y: 7.08, z: -1}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7594,6 +7642,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1304126032}
     m_Modifications:
     - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
+      propertyPath: cellType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: walkable
       value: 1
       objectReference: {fileID: 0}
@@ -7607,11 +7659,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4142357951876588996, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4142357951876588996, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8577291709755580162, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8217,6 +8269,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1304126032}
     m_Modifications:
     - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
+      propertyPath: cellType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: walkable
       value: 1
       objectReference: {fileID: 0}
@@ -8394,6 +8450,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1304126032}
     m_Modifications:
+    - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
+      propertyPath: cellType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2048683850681300443, guid: 634cba82d12fd4f399abdf0beec01e54, type: 3}
       propertyPath: walkable
       value: 1
